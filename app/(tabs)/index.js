@@ -1,5 +1,5 @@
 import Slider from '@react-native-community/slider'
-import { View, Text, StyleSheet, Image } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 
 export default function App() {
     return(
@@ -20,6 +20,10 @@ export default function App() {
                     thumbTintColor='grey'
                 />
             </View>
+
+            <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Generate Password</Text>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -41,5 +45,18 @@ const styles = StyleSheet.create({
         backgroundColor: "#FFF",
         borderRadius: 8,
         padding: 8,
+    },
+    button:{
+        backgroundColor: 'grey',
+        width: "80%",
+        height: 50,
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: 8,
+        marginBottom: 18,
+    },
+    buttonText:{
+        color: "#FFF",
+        fontSize: 16,
     }
 })
