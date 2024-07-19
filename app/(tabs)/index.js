@@ -1,14 +1,18 @@
+import { userState, useState } from 'react'
 import Slider from '@react-native-community/slider'
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 
 export default function App() {
+    const [size, setsize] = useState(10)
+
+
     return(
         <View style={styles.container}>
             <Image
                 source={require("../../src/assets/logo.png")}
                 style={styles.logo}
             />
-            <Text style={styles.title}>20 characters</Text>
+            <Text style={styles.title}>{size} characters</Text>
 
             <View style={styles.area}>
                 <Slider
@@ -18,6 +22,8 @@ export default function App() {
                     maximumTrackTintColor="#FF0000"
                     minimumTrackTintColor="#000"
                     thumbTintColor='grey'
+                    value={size}
+                    onValueChange={ (value) => setsize(value.toFixed(0)) }
                 />
             </View>
 
