@@ -8,7 +8,7 @@ export default function App() {
                 source={require("../../src/assets/logo.png")}
                 style={styles.logo}
             />
-            <Text style={styles.title}>Enter 20 characters</Text>
+            <Text style={styles.title}>20 characters</Text>
 
             <View style={styles.area}>
                 <Slider
@@ -58,5 +58,10 @@ const styles = StyleSheet.create({
     buttonText:{
         color: "#FFF",
         fontSize: 16,
+    },
+    title:{
+        fontSize: 25,
+        fontWeight: 'bold',
+
     }
 })
