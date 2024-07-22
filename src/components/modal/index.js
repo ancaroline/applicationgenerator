@@ -1,14 +1,27 @@
 import { View, Text, StyleSheet, TouchableOpacity, Pressable } from "react-native";
 
-export function ModalPassword() {
+export function ModalPassword( {password, handleClose} ) {
     return(
         <View style={styles.container}>
             <View style={styles.content}>
                 <Text style={styles.title}>Generated Password</Text>
 
                 <Pressable style={styles.innerPassword}>
-                    <Text style={styles.text}>123</Text>
+                    <Text style={styles.text}>
+                        {password}
+                    </Text>
                 </Pressable>
+
+                <View style={styles.buttonArea}>
+                    <TouchableOpacity style={styles.button} onPress={handleClose}>
+                        <Text style={styles.buttonText}>Voltar</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={[styles.button, styles.buttonSave]}>
+                        <Text style={styles.buttonSaveText}>Salvar Senha</Text>
+                    </TouchableOpacity>
+
+                </View>
             </View>
         </View>
     )
@@ -46,5 +59,27 @@ const styles = StyleSheet.create({
     text:{
         color: "#FFF",
         textAlign: "center",
+    },
+    buttonArea:{
+        flexDirection: "row",
+        width: '90%',
+        marginTop: 8,
+        alignItems: "center",
+        justifyContent: "space-between"
+    },
+    button:{
+        flex: 1,
+        alignItems: 'center',
+        marginTop: 14,
+        marginBottom: 14,
+        padding: 8,
+    },
+    buttonSave:{
+        backgroundColor: "#00AB71",
+        borderRadius: 8,
+    },
+    buttonSaveText: {
+        color: "#FFF",
+        fontWeight: 'bold',
     }
 })
